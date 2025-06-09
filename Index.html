@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Heart Click Message</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: white url('https://i.imgur.com/Cc93zfs.png') no-repeat center center;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .heart {
+      font-size: 100px;
+      color: #e25555;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .heart:hover {
+      transform: scale(1.1);
+    }
+
+    .popup {
+      display: none;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #e25555;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 20px;
+      color: #333;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .popup.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heart" onclick="showMessage()">❤️</div>
+    <div id="popupMessage" class="popup">You are loved! 💖</div>
+  </div>
+
+  <script>
+    function showMessage() {
+      const popup = document.getElementById('popupMessage');
+      popup.classList.add('show');
+    }
+  </script>
+</body>
+</html>
